@@ -1,0 +1,574 @@
+/* ==========================================================================
+   VARIABLES GLOBALES (IDENTIDAD VISUAL ÉLORIA PARFUM)
+   ========================================================================== */
+:root {
+    --color-principal: #111111;         /* Negro Carbón */
+    --color-secundario: #f5efe6;        /* Crema Cálido */
+    --color-complementario: #c5a059;    /* Dorado Champán Envejecido */
+    --color-complementario-hover: #b08b46;
+    --color-fondo: #faf8f5;             /* Marfil Suave */
+    --color-tarjeta: #ffffff;           /* Blanco Puro */
+    --color-texto: #222222;             /* Texto Oscuro */
+    --color-texto-suave: #666666;       /* Texto Secundario */
+    --color-borde: #e8e2d8;             /* Borde Crema Claro */
+    
+    /* Tipografías de Google Fonts */
+    --fuente-titulos: 'Cormorant Garamond', serif;
+    --fuente-textos: 'Montserrat', sans-serif;
+}
+
+/* ==========================================================================
+   RESET BÁSICO Y ESTILOS GENERALES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-textos);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.seccion-contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.4rem;
+    color: var(--color-principal);
+    margin-bottom: 40px;
+}
+
+.titulo-seccion::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-complementario);
+    margin: 10px auto 0;
+}
+
+/* BOTONES GENERALES */
+.boton {
+    display: inline-block;
+    padding: 12px 26px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.boton-principal {
+    background-color: var(--color-complementario);
+    color: #ffffff;
+}
+
+.boton-principal:hover {
+    background-color: var(--color-complementario-hover);
+}
+
+/* ==========================================================================
+   1. HEADER / LOGO (FLEXBOX)
+   ========================================================================== */
+.encabezado {
+    background-color: var(--color-principal);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.encabezado-contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 55px; /* Control de tamaño del logo */
+    width: auto;
+    object-fit: contain;
+}
+
+.menu-lista {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+.menu-lista a {
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.menu-lista a:hover {
+    color: var(--color-complementario);
+}
+
+/* ==========================================================================
+   2. HERO (FLEXBOX DE 2 COLUMNAS)
+   ========================================================================== */
+.hero {
+    background-color: var(--color-secundario);
+    padding: 70px 0;
+}
+
+.hero-contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-texto {
+    flex: 1;
+}
+
+.etiqueta {
+    color: var(--color-complementario);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero-texto h1 {
+    font-size: 3.4rem;
+    color: var(--color-principal);
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+.eslogan {
+    font-family: var(--fuente-titulos);
+    font-size: 1.4rem;
+    color: var(--color-complementario);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    margin-bottom: 25px;
+    color: var(--color-texto-suave);
+    font-size: 0.95rem;
+}
+
+.hero-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-imagen img {
+    max-height: 400px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.12));
+}
+
+/* ==========================================================================
+   3. SECCIÓN NOSOTROS (FLEXBOX)
+   ========================================================================== */
+.nosotros-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nosotros-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nosotros-imagen img {
+    max-height: 380px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1));
+}
+
+.nosotros-texto {
+    flex: 1;
+}
+
+.nosotros-texto h3 {
+    font-size: 1.5rem;
+    color: var(--color-principal);
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+
+.nosotros-texto p {
+    color: var(--color-texto-suave);
+    font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   4. PRODUCTOS / CATÁLOGO
+   ========================================================================== */
+.productos {
+    background-color: var(--color-secundario);
+}
+
+.productos-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.tarjeta-producto {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    width: calc(33.333% - 17px);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Ajuste proporcional para que las imágenes de perfumes no se distorsionen */
+.tarjeta-producto img {
+    height: 260px;
+    width: auto;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.tarjeta-contenido {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.tarjeta-contenido h3 {
+    font-size: 1.3rem;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.tarjeta-contenido p {
+    color: var(--color-texto-suave);
+    font-size: 0.88rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.precio {
+    display: block;
+    font-family: var(--fuente-titulos);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-complementario);
+    margin-bottom: 15px;
+}
+
+.boton-tarjeta {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    width: 100%;
+}
+
+.boton-tarjeta:hover {
+    background-color: var(--color-complementario);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   5. BENEFICIOS / EXPERIENCIA
+   ========================================================================== */
+.beneficios-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta-beneficio {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-top: 3px solid var(--color-complementario);
+    padding: 30px 20px;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.icono-beneficio {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-beneficio h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-beneficio p {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.enlace-beneficio {
+    color: var(--color-complementario);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   6. TABLA
+   ========================================================================== */
+.tabla-seccion {
+    background-color: var(--color-secundario);
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+}
+
+thead {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+}
+
+th, td {
+    padding: 15px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   7. GALERÍA
+   ========================================================================== */
+.galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.galeria-item {
+    width: calc(33.333% - 14px);
+    min-width: 240px;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeria-item img {
+    height: 240px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   8. FORMULARIO
+   ========================================================================== */
+.contacto {
+    background-color: var(--color-secundario);
+}
+
+.contacto-formulario-contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-tarjeta);
+    padding: 35px;
+    border: 1px solid var(--color-borde);
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+}
+
+.campo-grupo label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-principal);
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-textos);
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    outline: none;
+    border-color: var(--color-complementario);
+}
+
+.boton-bloque {
+    width: 100%;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.pie-pagina {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    padding-top: 45px;
+}
+
+.pie-pagina-contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    padding-bottom: 35px;
+}
+
+.footer-logo {
+    height: 45px;
+    width: auto;
+    margin-bottom: 12px;
+}
+
+.pie-columna {
+    flex: 1;
+    min-width: 220px;
+}
+
+.pie-columna h4 {
+    color: var(--color-complementario);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.pie-eslogan {
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    color: var(--color-complementario);
+    margin-bottom: 8px;
+}
+
+.pie-columna p {
+    font-size: 0.88rem;
+    color: #cccccc;
+    margin-bottom: 6px;
+}
+
+.pie-columna a {
+    color: var(--color-complementario);
+}
+
+.pie-derechos {
+    border-top: 1px solid #222222;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85rem;
+    color: #888888;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVE (PANTALLAS PEQUEÑAS / MÓVILES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .encabezado-contenedor {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .menu-lista {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-contenedor,
+    .nosotros-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.5rem;
+    }
+
+    .tarjeta-producto,
+    .galeria-item {
+        width: 100%;
+    }
+
+    .pie-pagina-contenedor {
+        flex-direction: column;
+    }
+}
