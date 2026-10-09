@@ -570,5 +570,7 @@ th, td {
 
     .pie-pagina-contenedor {
         flex-direction: column;
+       /* Actualizacion */
     }
+
 }
